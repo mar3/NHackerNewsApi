@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHackerNewsClient", "NHackerNewsClient\NHackerNewsClient.csproj", "{D699A7DC-BAE7-449B-B870-76C2C82EDA60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{78596D2E-2007-442F-B475-3BA2E56F8695}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{D699A7DC-BAE7-449B-B870-76C2C82EDA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D699A7DC-BAE7-449B-B870-76C2C82EDA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D699A7DC-BAE7-449B-B870-76C2C82EDA60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78596D2E-2007-442F-B475-3BA2E56F8695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78596D2E-2007-442F-B475-3BA2E56F8695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78596D2E-2007-442F-B475-3BA2E56F8695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78596D2E-2007-442F-B475-3BA2E56F8695}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

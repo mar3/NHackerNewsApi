@@ -4,5 +4,14 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
 # macOS
 .DS_Store
+
+# Verify
+*.received.*

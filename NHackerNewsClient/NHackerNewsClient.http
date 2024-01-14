@@ -1,6 +1,6 @@
 @NHackerNewsClient_HostAddress = http://localhost:5032
 
-GET {{NHackerNewsClient_HostAddress}}/weatherforecast/
+GET {{NHackerNewsClient_HostAddress}}/beststories?n=3
 Accept: application/json
 
 ###
