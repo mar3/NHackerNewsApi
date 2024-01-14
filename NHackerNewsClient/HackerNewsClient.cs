@@ -56,13 +56,12 @@ public sealed class HttpHackerNewsClient(HttpClient httpClient) : IHackerNewsCli
     )
     {
         public Story ToStory() => new(
-            Id,
-            By,
-            Descendants,
-            Score,
-            Time,
             Title,
-            Url
+            Url,
+            By,
+            Time,
+            Score,
+            Descendants
         );
     }
 }
