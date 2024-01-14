@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:80
+      HackerNews__BaseUrl: https://hacker-news.firebaseio.com/
+      HackerNews__CacheDurationMilliseconds: 5000
