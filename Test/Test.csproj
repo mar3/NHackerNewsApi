@@ -14,6 +14,8 @@
         <PackageReference Include="Flurl.Http" Version="3.2.4" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.1" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0"/>
+        <PackageReference Include="NBomber" Version="5.4.1" />
+        <PackageReference Include="NBomber.Http" Version="5.0.1" />
         <PackageReference Include="Verify.Xunit" Version="22.11.5" />
         <PackageReference Include="WireMock.Net" Version="1.5.46" />
         <PackageReference Include="xunit" Version="2.6.5" />
@@ -29,6 +31,10 @@
 
     <ItemGroup>
       <ProjectReference Include="..\NHackerNewsClient\NHackerNewsClient.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Performance\reports\" />
     </ItemGroup>
 
 </Project>

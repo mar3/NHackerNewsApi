@@ -47,11 +47,39 @@ Application will be available at http://localhost:8080, swagger at http://localh
 
 ## How to run tests
 
+### Integration tests
+
 ```bash
-docker run --rm -v ${PWD}:/app -w /app mcr.microsoft.com/dotnet/sdk:8.0 dotnet test
+docker run --rm -v ${PWD}:/app -w /app mcr.microsoft.com/dotnet/sdk:8.0 dotnet test --filter "FullyQualifiedName~Test.Integration"
 ```
 
 Tests are written using [xUnit](https://xunit.net/), [WireMock.Net](https://github.com/WireMock-Net/WireMock.Net), [Verify](https://github.com/VerifyTests/Verify) and [FluentAssertions](https://fluentassertions.com/).
+
+### Performance tests
+
+```bash
+docker compose -f docker-compose.performance-test.yml up test
+```
+
+Performance tests are written using [NBomber](https://nbomber.com/).
+
+#### Results
+
+Hacker News API mocked using WireMock with **fixed delay 500ms**. Cache is enabled with **5 seconds** duration.
+
+load simulations (run in docker on local machine with Apple M2 chip):
+
+- `inject`, rate: `100`, interval: `00:00:01`, during: `00:03:00`
+
+| step               | ok stats                                                                   |
+|--------------------|----------------------------------------------------------------------------|
+| name               | `global information`                                                       |
+| request count      | all = `18000`, ok = `18000`, RPS = `100`                                   |
+| latency            | min = `0.16` ms, mean = `287.11` ms, max = `1051.98` ms, StdDev = `265.51` |
+| latency percentile | p50 = `295.94` ms, p75 = `477.95` ms, p95 = `804.86` ms, p99 = `979.97` ms |
+| data transfer      | min = `12.25` KB, mean = `12.254` KB, max = `12.25` KB, all = `215.3` MB   |
+
+More details in [Test/Performance/reports](Test/Performance/reports) directory.
 
 ## Configuration
 

@@ -1,0 +1,30 @@
+services:
+  test:
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    volumes:
+      - .:/app
+      - /app/Test/bin
+      - /app/Test/obj
+      - ./Test/Performance/reports:/app/Test/bin/Debug/net8.0/reports
+    working_dir: /app
+    command: dotnet test --filter FullyQualifiedName~Test.Performance
+    environment:
+      API_URL: http://api:80
+    depends_on:
+      - api
+    
+  api:
+    build: .
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:80
+      HackerNews__BaseUrl: http://wiremock:8080
+      HackerNews__CacheDurationMilliseconds: 5000
+    depends_on: 
+      - wiremock
+  
+  wiremock:
+    image: wiremock/wiremock:latest
+    volumes:
+      - ./Test/Performance/wiremock-mappings:/home/wiremock/mappings
+    command: --global-response-templating --port 8080

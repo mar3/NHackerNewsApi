@@ -22,7 +22,7 @@ builder.Services.AddHttpClient<HttpHackerNewsClient>(client =>
     client.BaseAddress = new Uri(hackerNewsOptions.BaseUrl);
 }).AddStandardResilienceHandler(options =>
 {
-    options.AttemptTimeout.Timeout = TimeSpan.FromSeconds(1);
+    options.AttemptTimeout.Timeout = TimeSpan.FromSeconds(5);
     options.TotalRequestTimeout.Timeout = TimeSpan.FromSeconds(10);
 });
 
