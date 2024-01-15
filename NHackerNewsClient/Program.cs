@@ -64,7 +64,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/beststories", (int n, BestStoriesService service, CancellationToken cancellationToken) =>
+app.MapGet("/beststories", (BestStoriesService service, CancellationToken cancellationToken, int n = 5) =>
         n < 0 ? Results.BadRequest() : Results.Ok(service.GetBestStoriesAsync(n, cancellationToken)))
     .WithName("GetBestStories")
     .WithOpenApi();
