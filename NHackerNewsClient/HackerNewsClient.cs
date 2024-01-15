@@ -47,11 +47,9 @@ public sealed class HttpHackerNewsClient(HttpClient httpClient) : IHackerNewsCli
     private sealed record StoryDto(
         string? By,
         int Descendants,
-        int Id,
         int Score,
         int Time,
         string? Title,
-        string? Type,
         string? Url
     )
     {
